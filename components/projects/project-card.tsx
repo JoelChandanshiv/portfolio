@@ -7,15 +7,11 @@ import { Github, ArrowUpRight } from 'lucide-react';
 import type { Project } from '@/data/projects';
 import { DomainTag } from '@/components/ui/domain-tag';
 import { TechTag } from '@/components/ui/tech-tag';
+import { pickTechIcons } from '@/components/ui/tech-icon';
 import { PatentRibbon } from './patent-ribbon';
 
 function ProjectVisual({ project }: { project: Project }) {
-  // Generates a unique architectural-looking visual per project using
-  // gradient + grid + tech initials. Replaces real screenshots gracefully.
-  const initials = project.tech
-    .slice(0, 4)
-    .map((t) => t.replace(/[^A-Z]/g, '').slice(0, 2) || t.slice(0, 2).toUpperCase())
-    .join(' · ');
+  const icons = pickTechIcons(project.tech, 5);
 
   return (
     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl border border-[color:var(--border-subtle)]">
@@ -34,10 +30,20 @@ function ProjectVisual({ project }: { project: Project }) {
           backgroundSize: '32px 32px',
         }}
       />
-      <div className="absolute inset-0 flex items-center justify-center p-4">
-        <span className="font-mono text-xs uppercase tracking-[0.3em] text-fg-muted/80 md:text-sm">
-          {initials}
-        </span>
+      <div className="absolute inset-0 flex items-center justify-center gap-4 p-4">
+        {icons.map(({ Icon, color }, i) => (
+          <div
+            key={i}
+            className="flex h-12 w-12 items-center justify-center rounded-xl border border-[color:var(--border-subtle)] bg-[color:var(--bg-surface)]/70 backdrop-blur-sm transition-transform duration-300 group-hover:-translate-y-0.5 md:h-14 md:w-14"
+            style={{
+              color,
+              boxShadow: `0 6px 24px -8px ${color}55`,
+              transform: `translateY(${(i % 2) * 6 - 3}px)`,
+            }}
+          >
+            <Icon size={22} />
+          </div>
+        ))}
       </div>
     </div>
   );

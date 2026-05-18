@@ -40,7 +40,7 @@ export function About() {
             <div className="relative gradient-border overflow-hidden rounded-3xl">
               <div className="relative aspect-square w-[260px] sm:w-[300px] md:w-[340px]">
                 <Image
-                  src="/joel-portrait.svg"
+                  src="/joel-portrait.png"
                   alt="Joel Chandanshiv"
                   fill
                   sizes="340px"

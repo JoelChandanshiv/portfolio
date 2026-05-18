@@ -73,7 +73,7 @@ export function PortraitFrame() {
       {/* Portrait */}
       <div className="absolute inset-8 overflow-hidden rounded-full glass">
         <Image
-          src="/joel-portrait.svg"
+          src="/joel-portrait.png"
           alt="Joel Chandanshiv portrait"
           fill
           priority
