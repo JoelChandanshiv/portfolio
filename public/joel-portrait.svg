@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#1a1a24"/>
+      <stop offset="60%" stop-color="#12121a"/>
+      <stop offset="100%" stop-color="#0a0a0f"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <linearGradient id="silhouette" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2a2a3a"/>
+      <stop offset="100%" stop-color="#12121a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bg)"/>
+
+  <!-- subtle circuit lines -->
+  <g stroke="url(#rim)" stroke-width="0.6" opacity="0.25" fill="none">
+    <path d="M40 80 L120 80 L130 90 L130 140"/>
+    <path d="M360 100 L290 100 L280 110 L280 160"/>
+    <path d="M50 320 L130 320 L140 310 L140 270"/>
+    <path d="M350 340 L260 340 L250 330 L250 280"/>
+    <circle cx="40" cy="80" r="2.5" fill="#00F0FF"/>
+    <circle cx="360" cy="100" r="2.5" fill="#8B5CF6"/>
+    <circle cx="50" cy="320" r="2.5" fill="#00F0FF"/>
+    <circle cx="350" cy="340" r="2.5" fill="#8B5CF6"/>
+  </g>
+
+  <!-- soft glow halo behind head -->
+  <ellipse cx="200" cy="160" rx="100" ry="110" fill="url(#rim)" opacity="0.18" filter="url(#glow)"/>
+
+  <!-- silhouette body -->
+  <g filter="url(#glow)">
+    <!-- shoulders/torso -->
+    <path d="M70 400 L70 320 Q70 270 130 250 Q165 240 200 240 Q235 240 270 250 Q330 270 330 320 L330 400 Z" fill="url(#silhouette)"/>
+    <!-- neck -->
+    <rect x="175" y="220" width="50" height="40" rx="8" fill="url(#silhouette)"/>
+    <!-- head -->
+    <ellipse cx="200" cy="160" rx="78" ry="92" fill="url(#silhouette)"/>
+  </g>
+
+  <!-- rim light highlights -->
+  <path d="M122 105 Q105 175 130 235 Q155 270 200 252" stroke="url(#rim)" stroke-width="2.2" fill="none" opacity="0.85" filter="url(#glow)"/>
+  <path d="M278 105 Q295 175 270 235 Q245 270 200 252" stroke="url(#rim)" stroke-width="1.6" fill="none" opacity="0.55"/>
+
+  <!-- placeholder label -->
+  <g font-family="ui-monospace, 'JetBrains Mono', monospace" fill="#9CA3AF" opacity="0.55">
+    <text x="200" y="378" text-anchor="middle" font-size="9" letter-spacing="2">// PORTRAIT PLACEHOLDER</text>
+  </g>
+</svg>

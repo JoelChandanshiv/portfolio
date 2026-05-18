@@ -1,0 +1,100 @@
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Download, MapPin, GraduationCap } from 'lucide-react';
+import { LinkButton } from '@/components/ui/button';
+import { SectionHeading } from '@/components/ui/section-heading';
+import { StatCounter } from './stat-counter';
+import { stats } from '@/data/achievements';
+import { siteConfig } from '@/lib/site-config';
+
+const ABOUT_PARAGRAPHS = [
+  'I am a Computer Engineering student and DevOps-focused engineer passionate about building scalable cloud systems, intelligent applications, and automation-driven solutions that solve real-world problems.',
+  'My journey into technology started with curiosity around how systems work behind the scenes, which gradually evolved into a strong interest in DevOps, cloud infrastructure, and AI-powered engineering. I enjoy designing production-grade systems — from automating deployments and managing cloud infrastructure to building intelligent applications using machine learning and MLOps practices.',
+  'Over time, I have worked across DevOps, AI/ML, IoT, and backend engineering through internships, hackathons, research-driven projects, and real-world deployments. I am particularly interested in creating systems that are reliable, scalable, and impactful — combining automation with intelligence to solve meaningful problems.',
+  'Currently, I am focused on DevOps Engineering, Cloud Infrastructure, MLOps, and AI systems while continuously exploring modern technologies and production best practices.',
+];
+
+export function About() {
+  return (
+    <section id="about" className="relative py-24">
+      <div className="section-container">
+        <SectionHeading eyebrow="// About" title="Engineering with intent." align="left" />
+
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative mx-auto"
+          >
+            <div
+              className="absolute -inset-6 rounded-3xl opacity-50 blur-2xl"
+              style={{
+                background:
+                  'linear-gradient(135deg, var(--accent-primary)33, var(--accent-secondary)33)',
+              }}
+            />
+            <div className="relative gradient-border overflow-hidden rounded-3xl">
+              <div className="relative aspect-square w-[260px] sm:w-[300px] md:w-[340px]">
+                <Image
+                  src="/joel-portrait.svg"
+                  alt="Joel Chandanshiv"
+                  fill
+                  sizes="340px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs text-fg-muted">
+                <MapPin size={12} />
+                {siteConfig.location}
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs text-fg-muted">
+                <GraduationCap size={12} />
+                B.E. Computer Engg · CGPA 9.0
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-5"
+          >
+            {ABOUT_PARAGRAPHS.map((p, i) => (
+              <p key={i} className="text-base leading-relaxed text-fg-muted md:text-lg">
+                {p}
+              </p>
+            ))}
+
+            <div className="pt-2">
+              <LinkButton
+                href="/resume.pdf"
+                download
+                variant="primary"
+                size="lg"
+                icon={<Download size={16} />}
+                iconPosition="left"
+              >
+                Download Resume
+              </LinkButton>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className="mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          {stats.map((stat) => (
+            <StatCounter key={stat.label} stat={stat} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
