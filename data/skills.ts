@@ -20,7 +20,7 @@ export const skillCategories: SkillCategory[] = [
       'Ansible',
       'Jenkins',
       'GitHub Actions',
-      'AWS (EC2, ECS, EKS, Lambda, S3, IAM)',
+      'AWS',
       'CloudWatch',
       'Linux',
       'Nginx',
@@ -57,6 +57,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'Apache Kafka',
       'FastAPI',
+      'Next.js',
       'Flask',
       'REST APIs',
       'PostgreSQL',
@@ -75,6 +76,8 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'Raspberry Pi',
       'Arduino',
+      'ESP8266',
+      'NodeMCU',
       'ESP32',
       'MQTT',
       'Edge AI deployment',

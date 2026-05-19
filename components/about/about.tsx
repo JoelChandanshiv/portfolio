@@ -10,10 +10,7 @@ import { stats } from '@/data/achievements';
 import { siteConfig } from '@/lib/site-config';
 
 const ABOUT_PARAGRAPHS = [
-  'I am a Computer Engineering student and DevOps-focused engineer passionate about building scalable cloud systems, intelligent applications, and automation-driven solutions that solve real-world problems.',
-  'My journey into technology started with curiosity around how systems work behind the scenes, which gradually evolved into a strong interest in DevOps, cloud infrastructure, and AI-powered engineering. I enjoy designing production-grade systems — from automating deployments and managing cloud infrastructure to building intelligent applications using machine learning and MLOps practices.',
-  'Over time, I have worked across DevOps, AI/ML, IoT, and backend engineering through internships, hackathons, research-driven projects, and real-world deployments. I am particularly interested in creating systems that are reliable, scalable, and impactful — combining automation with intelligence to solve meaningful problems.',
-  'Currently, I am focused on DevOps Engineering, Cloud Infrastructure, MLOps, and AI systems while continuously exploring modern technologies and production best practices.',
+  'Computer Engineering student and DevOps-focused engineer building scalable cloud systems and intelligent, automation-driven solutions. Experienced in DevOps, AI/ML, IoT, and backend engineering, I design production-grade systems that are reliable, scalable, and impactfull.',
 ];
 
 export function About() {
