@@ -34,26 +34,25 @@ export function About() {
                   'linear-gradient(135deg, var(--accent-primary)33, var(--accent-secondary)33)',
               }}
             />
-            <div className="relative gradient-border overflow-hidden rounded-3xl">
-              <div className="relative aspect-square w-[260px] sm:w-[300px] md:w-[340px]">
-                <Image
-                  src="/joel-portrait.png"
-                  alt="Joel Chandanshiv"
-                  fill
-                  sizes="340px"
-                  className="object-cover"
-                />
-              </div>
+        
+            <div className="relative w-[260px] sm:w-[300px] md:w-[340px] rounded-3xl overflow-hidden gradient-border">
+              <Image
+                src="/joel-portrait.png"
+                alt="Joel Chandanshiv"
+                width={340}          // set the actual width you want
+                height={400}         // set the height according to your image
+                className="object-cover rounded-3xl"
+              />
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs text-fg-muted">
-                <MapPin size={12} />
+            <div className="mt-6 flex flex-wrap gap-3 max-w-fit">
+              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-xs text-fg-muted">
+                <MapPin className="w-3 h-3 flex-shrink-0 align-middle" />
                 {siteConfig.location}
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5 text-xs text-fg-muted">
-                <GraduationCap size={12} />
-                B.E. Computer Engg · CGPA 9.0
+              <span className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1 text-xs text-fg-muted">
+               <GraduationCap className="w-3 h-3 flex-shrink-0 align-middle" />
+               B.E. Computer Engg · CGPA 9.0
               </span>
             </div>
           </motion.div>
