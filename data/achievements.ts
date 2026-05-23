@@ -35,7 +35,7 @@ export const achievements: Achievement[] = [
     iconName: 'trophy',
     accent: 'gold',
     images: [
-      '/images/WhatsApp Image 2026-01-20 at 12.34.56 PM.jpeg',
+      '/images/WhatsApp Image 2026-05-20 at 7.04.58 PM.jpeg',
       '/images/WhatsApp Image 2026-05-20 at 7.10.00 PM.jpeg'
     ],
   },
