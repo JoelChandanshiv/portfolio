@@ -84,7 +84,7 @@ export interface StatCounter {
 
 export const stats: StatCounter[] = [
   { label: 'Production Projects', value: 9, suffix: '+' },
-  { label: 'Hackathon Wins', value: 7, suffix: '+' },
+  { label: 'Hackathon Wins', value: 4, suffix: '+' },
   { label: 'International Patent', value: 1 },
   { label: 'CGPA', value: 9.0, decimals: 1 },
 ];
