@@ -9,6 +9,31 @@ export interface ExperienceEntry {
 
 export const experience: ExperienceEntry[] = [
   {
+    role: 'Cloud Engineer',
+    organization: 'Metasips Pvt. Ltd.',
+    start: '2026-07',
+    end: 'Present',
+    period: 'Jul 2026 – Present',
+    highlights: [
+      'Built cloud-native AI solutions spanning Generative AI, RAG, and intelligent agent workflows',
+      'Contributed to large-scale cloud migration initiatives from Azure to AWS',
+      'Designed and deployed scalable containerized workloads on AWS',
+      'Automated cloud infrastructure and deployment workflows using Infrastructure as Code',
+    ],
+  },
+  {
+    role: 'AI Full Stack Developer Intern',
+    organization: 'Glimmora International',
+    start: '2026-04',
+    end: '2026-07',
+    period: 'Apr 2026 – Jul 2026',
+    highlights: [
+      'Built AI-powered proof-of-concept applications across modern web technologies',
+      'Developed full-stack applications combining interactive interfaces with backend services',
+      'Explored Generative AI capabilities to prototype intelligent application workflows',
+    ],
+  },
+  {
     role: 'DevOps Intern',
     organization: 'Apptware',
     start: '2025-02',
@@ -17,7 +42,7 @@ export const experience: ExperienceEntry[] = [
     highlights: [
       'Built and maintained CI/CD pipelines for production deployments',
       'Automated infrastructure provisioning, reducing deployment time by 40%',
-      'Led cloud migration initiatives, improving scalability and reducing costs by 25%',
+      'Contributed to cloud migration initiatives, improving scalability and reducing costs by 25%',
       'Deployed and orchestrated applications using Docker and Kubernetes',
       'Implemented monitoring stack with Prometheus and Grafana',
     ],

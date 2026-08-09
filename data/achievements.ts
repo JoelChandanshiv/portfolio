@@ -66,13 +66,6 @@ export const achievements: Achievement[] = [
     accent: 'emerald',
     images: [],
   },
-  {
-    title: 'Student of the Year Award',
-    context: 'NIE Times of India',
-    iconName: 'star',
-    accent: 'gold',
-    images: [],
-  },
 ];
 
 export interface StatCounter {
